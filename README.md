@@ -9,7 +9,7 @@ Gimg是[zimg](https://github.com/buaazp/zimg)的golang版本。
 
 * 操作系统： ubuntu/debian/osx
 * golang版本： >= 1.4
-* ImageMagick版本： = 6.8.5-X
+* ImageMagick版本： 6.9.1-7 - 6.9.10-71
 
 
 
@@ -19,9 +19,9 @@ Gimg是[zimg](https://github.com/buaazp/zimg)的golang版本。
 ## Ubuntu/Debian
 
 - - -
-	wget http://www.magickwand.org/download/releases/ImageMagick-6.8.5-10.tar.gz
-	tar zxvf ImageMagick-6.8.5-10.tar.gz
-	cd ImageMagick-6.8.5-10/
+	wget https://imagemagick.org/download/ImageMagick-6.9.10-71.tar.gz
+	tar zxvf ImageMagick-6.8.10-71.tar.gz
+	cd ImageMagick-6.9.10-71/
 	./configure
 	make & make install
 	ldconfig /usr/local/lib
@@ -31,15 +31,25 @@ Gimg是[zimg](https://github.com/buaazp/zimg)的golang版本。
 - - -
 	brew install ImageMagick
 	
+
 - - -
+## CentOS/RedHat
+
+
+- - -
+        cat << EOF > /etc/yum.repos.d/imagemagick.repo
+[imagemagick]
+name=image magick
+baseurl=https://imagemagick.org/download/linux/CentOS/x86_64/
+enabled=1
+gpgcheck=0
+EOF
+        yum -y install ImageMagick ImageMagick-libs ImageMagick-devel
+
 ## 安装
 - - -
-	go get github.com/gographics/imagick/imagick
-	go get code.google.com/p/gcfg
-	go get github.com/garyburd/redigo/redis
-	go get github.com/Leon2012/gimg
-	cd $GOPATH/src/github.com/Leon2012/gimg/build/
-	go build -o gimg
+        make build	
+	cd build
 	./gimg --config=./conf/config.ini
 	
 	
@@ -56,13 +66,3 @@ Gimg是[zimg](https://github.com/buaazp/zimg)的golang版本。
 [http://182.92.189.64:8081/a258607b53444f32208e864f44a06b93?g=1](http://182.92.189.64:8081/a258607b53444f32208e864f44a06b93?g=1)
 
 [http://182.92.189.64:8081/a258607b53444f32208e864f44a06b93?f=png](http://182.92.189.64:8081/a258607b53444f32208e864f44a06b93?f=png)
-
-	
-	
-	
-
-	
-	
-
-
-

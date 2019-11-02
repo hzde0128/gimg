@@ -3,13 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
-	zimg "github.com/Leon2012/gimg"
+	zimg "github.com/hzde0128/gimg"
 	_ "github.com/bradfitz/gomemcache/memcache"
 	"net/http"
 	"os"
 	"runtime"
-	// "os/signal"
-	// "syscall"
 )
 
 var cfgFile string
@@ -76,20 +74,3 @@ func checkError(err error) {
 		os.Exit(-2)
 	}
 }
-
-// func signalHandle() {
-// 	// Handle SIGINT and SIGTERM.
-// 	ch := make(chan os.Signal, 1)
-// 	over := make(chan bool, 1)
-// 	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)
-
-// 	go func() {
-// 		sig := <-ch
-// 		//zContext.Logger.Info(sig)
-// 		over <- true
-// 	}()
-
-// 	//zContext.Logger.Info(<-over)
-
-// 	zContext.Logger.Info("server stop!!!")
-// }
