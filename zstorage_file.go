@@ -168,13 +168,6 @@ func (z *ZFileStorage) GetImage(request *ZRequest) ([]byte, error) {
 				z.context.Logger.Error("Open Original Image From Blob Failed! Begin to Open it From Disk.")
 				z.context.Cache.DelCache(md5Sum)
 
-				// origFile, err := os.Open(origPath)
-				// if err != nil {
-				// 	result = fmt.Errorf("Open Original Image From Disk Failed!")
-				// 	//goto ErrHandle
-				// 	return nil, result
-				// }
-
 				//err = mw.ReadImageFile(origFile)
 				err = mw.ReadImage(origPath)
 				if err != nil {

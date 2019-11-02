@@ -42,18 +42,9 @@ type AppConfig struct {
 	}
 }
 
-// func (a *AppConfig) Types() []string {
-//  return strings.Split(a.Storage.AllowedTypes, ",")
-// }
-
 func LoadConfig(cfgFile string) (AppConfig, error) {
 	var err error
 	var cfg AppConfig
-
-	// isExists := util.IsExist(cfgFile)
-	// if !isExists {
-	//  return cfg, errors.New("Config file is not exists!")
-	// }
 
 	err = gcfg.ReadFileInto(&cfg, cfgFile)
 	if err != nil {

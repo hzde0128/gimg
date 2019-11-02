@@ -70,9 +70,6 @@ func NewContext(cfgFile string) (*ZContext, error) {
 
 	var cache *ZCache
 	if cfg.Cache.Cache == 1 {
-		// var client *memcache.Client
-		// cacheAddr := fmt.Sprintf("%s:%d", cfg.Cache.MemcacheHost, cfg.Cache.MemcachePort)
-		// client = memcache.New(cacheAddr)
 		cache = NewCache(cfg.Cache.MemcacheHost, cfg.Cache.MemcachePort)
 	} else {
 		cache = nil

@@ -11,10 +11,6 @@ type ZCache struct {
 	client *memcache.Client
 }
 
-// func NewCache(c *memcache.Client) *ZCache {
-// 	return &ZCache{client: c}
-// }
-
 func NewCache(h string, p int) *ZCache {
 	var c *memcache.Client
 	cacheAddr := fmt.Sprintf("%s:%d", h, p)
@@ -56,7 +52,6 @@ func (z *ZCache) FindCacheBin(key string) ([]byte, error) {
 	} else {
 		return it.Value, nil
 	}
-
 }
 
 func (z *ZCache) SetCacheBin(k string, v []byte) error {

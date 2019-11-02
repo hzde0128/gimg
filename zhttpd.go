@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-	//"time"
 	"io"
 )
 
@@ -213,17 +212,10 @@ func (z *ZHttpd) doGet(md5Sum string) {
 		x = -1
 	}
 
-	// else if x > imgInfo.Width {
-	// 	x = imgInfo.Width
-	// }
-
 	y = str2Int(yy)
 	if y < 0 {
 		y = -1
 	}
-	// else if y > imgInfo.Height {
-	// 	y = imgInfo.Height
-	// }
 
 	r = str2Int(rotate)
 
@@ -248,8 +240,6 @@ func (z *ZHttpd) doGet(md5Sum string) {
 
 	format := strings.Trim(z.request.Form.Get("f"), " ")
 	if len(format) == 0 {
-		//f = "none"
-		//f = imgInfo.Format
 		f = z.context.Config.System.Format //加载默认保存图片格式
 	} else {
 		format = strings.ToLower(format)
@@ -266,9 +256,6 @@ func (z *ZHttpd) doGet(md5Sum string) {
 			f = format
 		}
 	}
-	// if f == strings.ToLower(imgInfo.Format) {
-	// 	f = "none"
-	// }
 
 	request := &ZRequest{
 		Md5:        md5Sum,
