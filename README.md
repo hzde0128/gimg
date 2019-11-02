@@ -57,6 +57,12 @@ cd build
 ./gimg --config=./conf/config.ini
 ```	
 	
+### Run in Docker
+
+```bash
+docker run -d -p 4869:4869 hzde0128/gimg:v1.0
+```
+
 ### Demo
 
 [http://182.92.189.64:8081/a258607b53444f32208e864f44a06b93](http://182.92.189.64:8081/a258607b53444f32208e864f44a06b93)
